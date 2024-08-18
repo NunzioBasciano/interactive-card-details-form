@@ -8,9 +8,8 @@ export const labels = {
     cardholderNameError: "Can't be blank",
     cardNumberError: "Invalid card number",
     cardNumberErrorFormatted: "Wrong format, numbers only",
-    expiryDateError: "Invalid expiry date",
-    cvvError: "Invalid CVV",
-    formError: "Please correct the errors"
+    cardExpiryError: "Cant't be blank",
+    cvvError: "Cant't be blank"
 
 
 
