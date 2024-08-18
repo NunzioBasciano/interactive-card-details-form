@@ -15,8 +15,10 @@ export const formatMonthNumber = (value) => {
 };
 
 export const formatYearNumber = (value) => {
-    if (value < 23) {
+    if (value < 24) {
         return `24`;
+    } else {
+        return value;
     }
 };
 
