@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { labels } from './data/labels.js';
-import { formatCardNumber, formatMonthNumber, formatYearNumber } from './function/formatFunction.js';
+import { formatCardNumber, formatMonthNumber, formatYearNumber, formatCardholderName } from './function/formatFunction.js';
 
 const initialState = {
   cardholder_name: 'e.g. Jane Appleseed',
@@ -57,12 +57,9 @@ function App() {
 
     let formattedValue = value;
 
-    /*    if (name === 'cardholder_name') {
-         const valueLower = value.trim().toLowerCase();
-         const valueUpper = valueLower.at(0).toUpperCase();
-         const valueWithoutFirstLetter = valueLower.slice(0);
-         formattedValue = valueUpper + valueWithoutFirstLetter;
-       } */
+    if (name === 'cardholder_name') {
+      formattedValue = formatCardholderName(formattedValue);
+    }
     if (name === 'card_number') {
       formattedValue = value.replace(/[^0-9e]/g, "");
       formattedValue = formatCardNumber(formattedValue);
