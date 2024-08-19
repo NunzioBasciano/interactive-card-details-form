@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    /* (active input border) */
+    --Linear-gradient: hsl(249, 99%, 64%);
+    --Linear-gradient-active: hsl(278, 94%, 30%);
+    /* (input errors) */
+    --red: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url('/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
 * {
-    margin: 16px;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
 }
