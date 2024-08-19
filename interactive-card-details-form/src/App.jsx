@@ -4,7 +4,7 @@ import { Form } from './components/Form.jsx';
 import { Card } from './components/Card.jsx';
 
 const initialState = {
-  cardholder_name: 'e.g. Jane Appleseed',
+  cardholder_name: 'Jane Appleseed',
   card_number: '0000 0000 0000 0000',
   expiry_month: '00',
   expiry_year: '00',
