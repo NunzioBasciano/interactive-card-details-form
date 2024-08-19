@@ -20,7 +20,7 @@ function Form(props) {
 
 
 
-    const { setCard, setIsOpen, isOpen } = props;
+    const { setCard, setIsOpen } = props;
 
     const validateForm = () => {
         let formErrors = {};
@@ -83,30 +83,31 @@ function Form(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         validateForm();
+    }
 
-        if ((obj) => Object.entries(obj).length === 0) {
+
+    useEffect(() => {
+        if (Object.keys(errors).length === 0 && form.cardholder_name !== '') {
             setIsOpen(true);
             setCard(form);
         }
-    }
-
-    useEffect(() => {
-        setErrors({});
-    }, [form]);
+    }, [errors]);
 
     return (
-        <form onSubmit={handleSubmit} action="submit">
-            <label htmlFor="name">{labels.cardholderNameLabel}</label>
+        <form className='flex flex-col gap-2 mt-16 px-5 ' onSubmit={handleSubmit} action="submit">
+            <label className='text-[14px] text-[--very-dark-violet] tracking-[1px] mb-[1px] uppercase' htmlFor="name">{labels.cardholderNameLabel}</label>
             <input
+                className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md	 '
                 onChange={handleChange}
                 type="text"
                 name="cardholder_name"
                 placeholder="e.g. Jane Appleseed"
             />
-            {errors.cardholder_name && <p>{errors.cardholder_name}</p>}
+            {errors.cardholder_name && <p className='text-[--red] text-[10px]'>{errors.cardholder_name}</p>}
 
-            <label htmlFor="card">{labels.cardNumberLabel}</label>
+            <label className='text-[14px] text-[--very-dark-violet] tracking-[1px] mt-[px] mb-[1px] uppercase' htmlFor="card">{labels.cardNumberLabel}</label>
             <input
+                className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md	 '
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 type="text"
@@ -115,42 +116,53 @@ function Form(props) {
                 maxLength="19"
                 value={form.card_number}
             />
-            {errors.card_number && <p>{errors.card_number}</p>}
+            {errors.card_number && <p className='text-[--red] text-[10px]'>{errors.card_number}</p>}
 
-            <div className="bottom_form">
-                <label htmlFor="expiry">{labels.expiryDateLabel}</label>
-                <input
-                    onChange={handleChange}
-                    onKeyDown={handleKeyDown}
-                    type="text"
-                    name="expiry_month"
-                    placeholder="MM"
-                    maxLength="2"
-                />
-                <input
-                    onChange={handleChange}
-                    onKeyDown={handleKeyDown}
-                    type="text"
-                    name="expiry_year"
-                    placeholder="YY"
-                    maxLength="2"
-                />
-                {errors.expiry && <p>{errors.expiry}</p>}
 
-                <label htmlFor="cvv">{labels.cvvLabel}</label>
-                <input
-                    onChange={handleChange}
-                    onKeyDown={handleKeyDown}
-                    type="text"
-                    name="cvc"
-                    placeholder="e.g. 123"
-                    maxLength="3"
-                    value={form.cvc}
-                />
-                {errors.cvc && <p>{errors.cvc}</p>}
+            <div className='flex justify-between'>
+                <div className='flex flex-col w-[48%]'>
+                    <label className='text-[14px] text-[--very-dark-violet] tracking-[1px] mb-2 uppercase' htmlFor="expiry">{labels.expiryDateLabel}</label>
+                    <div className='flex gap-2'>
+                        <input
+                            className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md w-full '
+                            onChange={handleChange}
+                            onKeyDown={handleKeyDown}
+                            type="text"
+                            name="expiry_month"
+                            placeholder="MM"
+                            maxLength="2"
+                        />
+                        <input
+                            className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md w-full'
+                            onChange={handleChange}
+                            onKeyDown={handleKeyDown}
+                            type="text"
+                            name="expiry_year"
+                            placeholder="YY"
+                            maxLength="2"
+                        />
+                    </div>
+                </div>
 
-                <input type="submit" value={labels.submitButtonLabel} />
+                <div className='flex flex-col w-2/4 ml-2'>
+                    <label className='text-[14px] text-[--very-dark-violet] tracking-[1px] mb-2 uppercase' htmlFor="cvv">{labels.cvvLabel}</label>
+                    <input
+                        className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md w-full'
+                        onChange={handleChange}
+                        onKeyDown={handleKeyDown}
+                        type="text"
+                        name="cvc"
+                        placeholder="e.g. 123"
+                        maxLength="3"
+                        value={form.cvc}
+                    />
+                </div>
             </div>
+            <div className='flex gap-[95px]'>
+                {errors.expiry && <p className='text-[--red] text-[10px]'>{errors.expiry}</p>}
+                {errors.cvc && <p className='text-[--red] text-[10px]'>{errors.cvc}</p>}
+            </div>
+            <input className='bg-[--very-dark-violet] py-[11px] my-[12px] rounded-md text-[--white] tracking-[1px] text-[16px] w-full' type="submit" value={labels.submitButtonLabel} />
         </form>
     )
 }
