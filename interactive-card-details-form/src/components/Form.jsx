@@ -94,7 +94,9 @@ function Form(props) {
     }, [errors]);
 
     return (
-        <form className='flex flex-col gap-2 mt-16 px-5 ' onSubmit={handleSubmit} action="submit">
+        <form className='flex flex-col gap-2 mt-16 px-5 
+            2xl:w-96 2xl:mx-48 2xl:my-48
+            ' onSubmit={handleSubmit} action="submit">
             <label className='text-[14px] text-[--very-dark-violet] tracking-[1px] mb-[1px] uppercase' htmlFor="name">{labels.cardholderNameLabel}</label>
             <input
                 className='border-solid border-[1px] border-[--light-grayish-violet] px-3 py-2 rounded-md	 '

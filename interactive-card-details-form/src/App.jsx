@@ -25,26 +25,28 @@ function App() {
 
   return (
     <>
-      <Card
-        card={card}
-      />
-      {isOpen &&
-        <div className="flex flex-col items-center gap-3 py-16">
-          <IconComplete />
-          <h2 className="text-[26px] uppercase tracking-[1.5px] text-[--very-dark-violet] mt-4">{labels.completeTitle}</h2>
-          <p className="text-[--dark-grayish-violet] text-[18px]">{labels.completeMessage}</p>
-          <button
-            onClick={handleConfirm}
-            className="bg-[--very-dark-violet] py-[11px] my-[12px] rounded-md text-[--white] tracking-[1px] text-[16px] w-4/5">{labels.continueButtonTitle}</button>
-        </div>
-      }
-      {!isOpen &&
-        <Form
-          setCard={setCard}
-          setIsOpen={setIsOpen}
-          isOpen={isOpen}
+      <div className="2xl:flex">
+        <Card
+          card={card}
         />
-      }
+        {isOpen &&
+          <div className="flex flex-col items-center gap-3 py-16">
+            <IconComplete />
+            <h2 className="text-[26px] uppercase tracking-[1.5px] text-[--very-dark-violet] mt-4">{labels.completeTitle}</h2>
+            <p className="text-[--dark-grayish-violet] text-[18px]">{labels.completeMessage}</p>
+            <button
+              onClick={handleConfirm}
+              className="bg-[--very-dark-violet] py-[11px] my-[12px] rounded-md text-[--white] tracking-[1px] text-[16px] w-4/5">{labels.continueButtonTitle}</button>
+          </div>
+        }
+        {!isOpen &&
+          <Form
+            setCard={setCard}
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+          />
+        }
+      </div>
     </>
   );
 }

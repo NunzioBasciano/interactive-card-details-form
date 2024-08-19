@@ -12,8 +12,12 @@ export default {
         'card_front': "url('./src/assets/images/bg-card-front.png')",
         'card_back': "url('./src/assets/images/bg-card-back.png')",
         'main_mobile': "url('./src/assets/images/bg-main-mobile.png')",
+        'main_desktop': "url('./src/assets/images/bg-main-desktop.png')",
 
-      }
+      },
+      screens: {
+        '2xl': '1440px',
+      },
     }
   },
   plugins: [],
