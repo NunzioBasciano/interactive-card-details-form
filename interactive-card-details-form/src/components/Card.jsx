@@ -14,7 +14,6 @@ function Card(props) {
                 </div>
                 <div className='absolute bg-card_front bg-cover flex flex-col justify-between rounded w-64 h-36 bottom-[-32px] left-4 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]
                                 2xl:top-[250px] 2xl:left-[260px] '>
-
                     <CardIcon
                     />
                     <div className='flex flex-col gap-3 p-4  text-[--white] '>
@@ -23,8 +22,6 @@ function Card(props) {
                             <p className='text-[10px] uppercase'>{card.cardholder_name}</p>
                             <p className='text-[10px] '>{card.expiry_month}/{card.expiry_year}</p>
                         </div>
-
-
                     </div>
                 </div>
             </div>

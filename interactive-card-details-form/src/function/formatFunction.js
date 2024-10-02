@@ -1,6 +1,5 @@
 
 export const formatCardNumber = (value) => {
-    // Rimuove tutti gli spazi e poi aggiunge uno spazio ogni 4 cifre
     return value.replace(/\s+/g, "").replace(/(\d{4})(?!e)/g, "$1 ").trim();
 };
 

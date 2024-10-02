@@ -12,7 +12,6 @@ const initialState = {
   cvc: '000'
 }
 
-
 function App() {
 
   const [card, setCard] = useState(initialState);
@@ -20,7 +19,7 @@ function App() {
 
   const handleConfirm = () => {
     setIsOpen(false);
-    setCard(initialState); // Reset form inputs to initial state upon successful payment confirmation
+    setCard(initialState);
   }
 
   return (
