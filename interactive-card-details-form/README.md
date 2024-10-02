@@ -105,6 +105,6 @@ Quando il form viene inviato correttamente, viene visualizzato un messaggio di c
 - tailwind e CSS: Utilizzato per stilizzare i componenti e la disposizione della carta di credito.
 - JavaScript (ES6): Utilizzato per la logica di formattazione e validazione dei dati.
 
-## Contributi
+## Esercitazione Frontend Mentor
 
-Se vuoi contribuire a questo progetto, sentiti libero di fare fork del repository e aprire una pull request.
+(https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw)
